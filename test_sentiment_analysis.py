@@ -1,13 +1,19 @@
-from SentimentAnalysis.sentiment_analysis import sentiment_analyzer
+from EmotionDetection.emotion_detection import emotion_detector
 import unittest
 
-class TestAnalyzer(unittest.TestCase):
-    def test_sentiment_analyzer(self):
-        result1 = sentiment_analyzer('I love working with Python')
-        self.assertEqual(result1['label'], 'SENT_POSITIVE')
-        result2 = sentiment_analyzer('I hate working with Python')
-        self.assertEqual(result2['label'], 'SENT_NEGATIVE')
-        result3 = sentiment_analyzer('I have neutral working with Python')
-        self.assertEqual(result3['label'], "SENT_NEUTRAL")
+
+class TestEmotionDetection(unittest.TestCase):
+    def test_emotion_detection(self):
+        result1 = emotion_detector('I am glad this happened')
+        self.assertEqual(result1['dominant_emotion'], 'joy')
+        result2 = emotion_detector('I am so angry')
+        self.assertEqual(result2['dominant_emotion'], 'anger')
+        result3 = emotion_detector('I feel disgusted just hearing about this')
+        self.assertEqual(result3['dominant_emotion'], 'disgust')
+        result4 = emotion_detector('I am so sad about this')
+        self.assertEqual(result4['dominant_emotion'], 'sadness')
+        result5 = emotion_detector('I am really afraid that this will happen')
+        self.assertEqual(result5['dominant_emotion'], 'fear')
+
 
 unittest.main()
