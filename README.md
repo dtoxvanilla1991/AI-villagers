@@ -40,6 +40,7 @@ The villagers are the heart and soul of AI Villagers. Each villager has their ow
 - ImageInsight - Expert in image recognition and analysis
 - ChatChamp - Champion of chat and conversation
 - TextTitan - Titan of text analysis and understanding
+- Cheddar - Loyal servant who understands you better than anyone.
 
 ## Flask API
 
